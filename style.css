@@ -263,13 +263,6 @@ footer span {
 
     border-radius: 50%;
 
-    background: var(--card);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
     overflow: hidden;
 }
 
