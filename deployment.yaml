@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: devops-website
-          image: localhost:32000/devops-website:v1
+          image: localhost:32000/devops-website:latest
 
           ports:
             - containerPort: 80
