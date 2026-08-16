@@ -1,50 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: devops-website
-
 spec:
   replicas: 2
-
   selector:
-    matchLabels:
-      app: devops-website
-
+    matchLabels: {app: devops-website}
   template:
-    metadata:
-      labels:
-        app: devops-website
-
+    metadata: {labels: {app: devops-website}}
     spec:
       containers:
-        - name: devops-website
-          image: localhost:32000/devops-website:latest
-
-          ports:
-            - containerPort: 80
-
-          resources:
-            requests:
-              cpu: "100m"
-              memory: "64Mi"
-
-            limits:
-              cpu: "500m"
-              memory: "128Mi"
-
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-
-            initialDelaySeconds: 5
-            periodSeconds: 10
-
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-
-            initialDelaySeconds: 10
-            periodSeconds: 20
+      - name: devops-website
+        image: localhost:32000/devops-website:v2
+        ports: [{containerPort: 80}]
